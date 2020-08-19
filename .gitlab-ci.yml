@@ -1,0 +1,12 @@
+image:  maven:3.6.3-jdk-11-openj9
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+build:
+  stage: build
+  script:
+    - mvn  -f thermostat-front/pom.xml clean install
+    - mvn  -f thermostat-data-consumer/pom.xml clean install
